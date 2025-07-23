@@ -1,5 +1,5 @@
 # NLP US Search in HTML files
-This repo makes a search over all HTML files in a root folder based on a US, or Acceptance Criteria, ranking all based on Weighted Recall method.
+This repo makes a search over all HTML files in a root folder based on a US, or Acceptance Criteria, ranking all files based on Weighted Recall method.
 
 ## How to run
 ```bash
