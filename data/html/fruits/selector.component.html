@@ -1,0 +1,26 @@
+<div style="max-width: 500px; margin: auto; padding: 24px;">
+  <h1>Fruit Selector</h1>
+
+  <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 16px;">
+    <mat-label>Select your favorite fruit</mat-label>
+    <mat-select [(value)]="selectedFruit">
+      <mat-option *ngFor="let fruit of fruits" [value]="fruit">
+        {{ fruit }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 16px;">
+    <mat-label>Why do you like this fruit?</mat-label>
+    <textarea matInput [(ngModel)]="comment" rows="4"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" (click)="submitChoice()" style="width: 100%;">
+    Submit Choice
+  </button>
+
+  <div *ngIf="submitted" style="margin-top: 24px;">
+    <h3>You selected: {{ selectedFruit }}</h3>
+    <p><strong>Comment:</strong> {{ comment }}</p>
+  </div>
+</div>

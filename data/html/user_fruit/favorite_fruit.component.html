@@ -1,0 +1,28 @@
+<div style="max-width: 600px; margin: auto; padding: 24px;">
+  <h1>Associate User to Favorite Fruit</h1>
+
+  <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 16px;">
+    <mat-label>User Name</mat-label>
+    <input matInput [(ngModel)]="userName" placeholder="Enter the user's name">
+    <mat-hint>Use full name for clarity</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 100%; margin-bottom: 16px;">
+    <mat-label>Select Favorite Fruit</mat-label>
+    <mat-select [(value)]="selectedFruit">
+      <mat-option *ngFor="let fruit of fruits" [value]="fruit">
+        {{ fruit }}
+      </mat-option>
+    </mat-select>
+    <mat-hint>You can only choose one fruit</mat-hint>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" style="width: 100%;" (click)="associate()">
+    Save Association
+  </button>
+
+  <div *ngIf="submitted" style="margin-top: 24px;">
+    <h2>Saved!</h2>
+    <p><strong>{{ userName }}</strong> likes <strong>{{ selectedFruit }}</strong>.</p>
+  </div>
+</div>
